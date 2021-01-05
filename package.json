@@ -1,0 +1,32 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "apexcharts": "^3.23.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "element-ui": "^2.14.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "nuxt": "^2.14.6",
+    "vue-apexcharts": "^1.6.0"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.1.0",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^10.1.0"
+  }
+}

@@ -1,0 +1,95 @@
+.barTitles{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .barWrapper{
+    width: 500px;
+    height: 500px;
+  }
+  .barContainer{
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .IntroName{
+   width: 600px;
+   height: 600px;
+   margin: auto;
+   margin-top: -60px;
+   padding-top: 100px;
+  }
+  .IntroCont{
+      background:url('../assets/paperBack.jpg') no-repeat;
+      background-size: cover;
+      height: 1720px;
+      animation-name: entrance;
+      animation-duration:1.7s;
+      animation-iteration-count:initial;
+      position:absolute;
+      transition: 2s;
+  }
+  @keyframes entrance{
+      0%{top:-2000px; top:-1500px; top:-1000px}
+      50%{top:215px}
+      100%{ top:200px}
+  }
+  #Vid{
+    color: white;
+  }
+  #Front{
+    color: black;
+    text-align: right;
+    margin-left: -110px;
+  }
+    .gradHead{
+    height: 100px;
+    border-radius: 10px;
+    width: 100%;
+  }
+    .Boxes{
+      font-family: 'Segoe UI';
+    }
+    .el-col {
+      border-radius: 4px;
+    }
+    .bg-purple-dark {
+      background: none;
+    }
+    .bg-purple {
+      background:none;
+  
+    }
+    .bg-purple-light {
+      background: #e5e9f2;
+    }
+    .grid-content {
+      border-radius: 4px;
+      min-height: 36px;
+      height: 200px;
+    }
+    .circleFrame{
+    border: 2px solid rgb(255, 166, 0);
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin: auto;
+    background:url('../assets/Pic.jpg') no-repeat;
+  }
+  .ColumnVideo{
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+  }
+  .buttonContainers{
+    width: 200px;
+    height: 70px;
+    border: 1px solid red;
+    margin: auto;
+  }
+  #align h1{
+    text-align: right;
+  }
+  #apex{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:40px;
+  }
