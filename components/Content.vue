@@ -7,10 +7,10 @@
                 <div class="IntroWrapper">
                     <div class="IntroName" 
                          id="faded">
-                            <h1>I'm <span id="apex">Stephen Zamora</span> 
-                                and Yes I do Video Editing and Front-End stuff...
-                                I am a developer based in Davao City, Philippines.
-                            </h1>
+                        <h1>I'm <span id="apex">Stephen Zamora</span> 
+                            and Yes I do Video Editing and Front-End stuff...
+                            I am a developer based in Davao City, Philippines.
+                        </h1>
                     </div>
                 </div>
           </el-col>
@@ -20,9 +20,7 @@
                     <div class="IntroName">
                          <img src="../assets/Pic.jpg" class="pic">
                         <div class="polaroid">
-                          
                         </div>
-                         
                     </div>
                </div>
           </el-col>

@@ -1,13 +1,13 @@
 {
-  "name": "port",
+  "name": "Portfolio",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --master=gh-pages --cleanup"
   },
   "dependencies": {
     "apexcharts": "^3.23.0",

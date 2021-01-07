@@ -1,0 +1,14 @@
+.chartContainer{
+    width: 148px;
+    margin-top: 80px;
+    margin-left: -45px;
+}
+.chartWrapper{
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+.DonutCharts{
+    width: 100%;
+    margin-bottom: 10px;
+}

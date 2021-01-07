@@ -18,15 +18,10 @@
             <el-col :span="12">
               <el-row>
                 <el-col :span="12">
-                  <yellowBox  v-show="show" id="hide"/> 
+                  <yellowBox/> 
                 </el-col>
                  <el-col :span="12">
-                      <div v-for="post in posts"
-                           v-bind:key="post._id">
-                      <div v-bind:id="post._id">
-                      </div>
-                           {{chartDraw(post.skillPie, post._id)}}
-                    </div>
+                   <donutCharts/>
                 </el-col>
               </el-row>
             </el-col>
@@ -42,105 +37,7 @@
              <el-col :span="12">
                <div class="IntroName" 
                     id="align">
-                    <div class="barWrapper"> 
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="60" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                           <el-col :span="8">
-                             <div class="barTitles">
-                                <p>OBS Brodcasting</p>
-                             </div>
-                           
-                          </el-col>
-                        </el-row>
-                      </div>
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="80" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                          <el-col :span="8">
-                             <div class="barTitles">
-                                <p>Explainer Videos</p>
-                             </div>
-                          </el-col>
-                        </el-row>
-                      </div>
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="55" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                          <el-col :span="8">
-                             <div class="barTitles">
-                                <p>Color Grading</p>
-                             </div>
-                          </el-col>
-                        </el-row>
-                      </div>
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="90" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                          <el-col :span="8">
-                             <div class="barTitles">
-                                <p>Slideshows</p>
-                             </div>
-                          </el-col>
-                        </el-row>
-                      </div>
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="80" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                          <el-col :span="8">
-                             <div class="barTitles">
-                                <p>Explainer Videos</p>
-                             </div>
-                          </el-col>
-                        </el-row>
-                      </div>
-                      <div class="barContainer">
-                        <el-row>
-                          <el-col :span="16">
-                               <el-progress :text-inside="true" 
-                                    :stroke-width="15" 
-                                    v-bind:percentage="65" 
-                                    v-bind:color="CustomColorBar">
-                                </el-progress>
-                          </el-col>
-                          <el-col :span="8">
-                             <div class="barTitles">
-                                <p>Stop Motion</p>
-                             </div>
-                          </el-col>
-                        </el-row>
-                      </div>
-                  </div>
+                    <bars/>
               </div>
             </el-col>
           </el-row>
@@ -155,13 +52,17 @@ import yellowBox from '../components/yellowBox';
 import apexcharts from '../components/barChart';
 import headered from '../components/headered';
 import contentLayout from '../components/Content';
+import bars from '../components/videoBars';
+import donutCharts from '../components/donut.vue';
 
 export default {
   components:{
     contentLayout,
     yellowBox,
     apexcharts,
-    headered
+    headered,
+    donutCharts,
+    bars
   },
     data(){
       return{
@@ -174,67 +75,6 @@ export default {
         CustomColorBar:'black'
       }
     },
-    methods:{
-    AddBox: function(){
-      return this.box;
-    },
-    chartDraw: function(a, e){
-        setTimeout(() => {
-        var total = 100,
-            remainder = 0
-            remainder = total - a
-        var options = {
-            plotOptions: {
-                pie: {
-                  donut: {
-                    size: '80%'
-                  }
-                }
-              },
-              series: [parseInt(a),remainder],
-              chart: {
-              type: 'donut',
-              width: 150
-            },
-            fill: {
-                colors: ['#001818', '#F6AA09']
-            },
-            dataLabels:{
-                enabled: false,
-                enabledOnSeries: undefined,
-            },
-            legend:{
-                show:false
-            },
-            stroke: {
-                show: true,
-                curve: 'smooth',
-                lineCap: 'butt',
-                colors: undefined,
-                width: 0,
-                dashArray: 0,      
-            },
-            tooltip:{
-                enabled: false,
-                enabledOnSeries: undefined,
-            },
-            responsive: [{
-                breakpoint: 480,
-                options: {
-                chart: {
-                    width:80
-                },
-                legend: {
-                    position: 'bottom'
-                }
-                }
-            }]
-            };
-        var chart = new ApexCharts(document.getElementById(''+ e +''), options);
-        chart.render();
-    }, 2000);  
-    },
-    },
   async created(){
       try{
         this.posts =  await PostService.getPosts();
@@ -246,13 +86,6 @@ export default {
            pieD: temp[keys].skillPie,
            Chart: temp[keys]._id
          })
-       }
-        for(var keys2 =0; keys2 <temp.length; keys2++){
-        bartemp.push({
-           barname: postBar[keys2].skillBarName,
-           barRate: postBar[keys2].skillBarRate
-         })
-         console.log(bartemp[keys2].skillBarRate)
        }
       }
       catch(err){
@@ -275,24 +108,11 @@ export default {
 <style src="../assets/design.css"></style>
 <style src="../assets/designII.css"></style>
 <style scoped>
-.barTitles{
-  font-family: 'Courier New', Courier, monospace;
-}
-.barWrapper{
-  width: 500px;
-  height: 500px;
-}
-.barContainer{
-  width: 500px;
-  height: 50px;
-  margin: auto;
-  margin-top: 20px;
-}
+
 .IntroName{
  width: 600px;
  height: 600px;
  margin: auto;
- margin-top: -60px;
  padding-top: 100px;
 }
 .IntroCont{

@@ -19,11 +19,6 @@
                  <el-col :span="8" class="SkillPercent">
                      {{post.skillPie}}%
                 </el-col>
-                 <el-col :span="8">
-                    <div  v-bind:id="post._id" 
-                      class="ChartCont">
-                </div>
-                </el-col>
               </el-row>
             </div>
         </el-col>
@@ -69,9 +64,6 @@
                         </el-button>
                   </el-col>
                 </el-row>
-                <el-row :gutter="0">
-                   
-                </el-row>
             </el-row>
             </div>
           </div>
@@ -91,10 +83,19 @@
   font-family: nos;
   font-size: 20px;
   position:absolute;
-  left: 600px;
-  top:-50px;
+  left: 280px;
+  top:160px;
   display: block;
+  animation-name: loadings;
+  animation-iteration-count: initial;
+  animation-duration:1.7s;
+  transition: 2s;
 }
+@keyframes loadings{
+      0%{top:-2000px; top:-1500px; top:-1000px}
+      50%{top:215px}
+      100%{ top:160px}
+  }
 #button{
   margin: auto;
   margin-left: 50%;

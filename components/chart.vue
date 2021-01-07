@@ -1,8 +1,8 @@
 <template>
     <div>
         <div id="chart">
-        <apexchart type="donut" :series="series"></apexchart>
-      </div>
+            <apexchart type="donut" :series="series"></apexchart>
+        </div>
     </div>
 </template>
 <script>
@@ -14,7 +14,6 @@ export default {
             labels: ['Lol'],
             chart: {
             type: 'donut',
-           
         },
         tooltip:{
             enabled: false

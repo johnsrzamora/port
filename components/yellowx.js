@@ -24,9 +24,8 @@ export default {
            pieD: temp[keys].skillPie,
            Chart: temp[keys]._id
          })
-
        }
-      
+
       }
       catch(err){
         this.error = err.message;
@@ -41,7 +40,7 @@ export default {
       this.skillN = '',
       this.num = ''
       this.posts =  await PostService.getPosts();
-      window.location.reload();
+      // window.location.reload();
     },
     async deletePost(id){
       await PostService.deletePost(id);

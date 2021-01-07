@@ -7,5 +7,4 @@
     </client-only>
 </div>
 </template>
-
 <script src="../components/apexBar.js"></script>
