@@ -4,7 +4,10 @@
         <div class="thumb"></div>
             <el-row>
                 <div class="WorksContainers">
-                    <donuts/>
+                    <lines/>
+                </div>
+                <div>
+              
                 </div>
             </el-row>
         </div>
@@ -15,11 +18,12 @@
 <style src="../assets/design.css"></style>
 <script>
 import headered from '../components/headered';
-import donuts from '../components/donut.vue';
+import lines from '../components/linechartComp.vue';
+
 export default {
     components:{
     headered,
-    donuts,
+    lines,
     err: ''
   },
     head(){
