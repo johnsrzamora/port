@@ -12,7 +12,6 @@ export default {
       }
     },
       async created(){
-       
       try{
         this.posts =  await PostService.getPosts();
         const temp = this.posts;

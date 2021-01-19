@@ -9,14 +9,20 @@ app.get('/', async (req, res)=>{
     const posts = await loadPostsCollection();
     res.send(await posts.find({}).toArray());
 });
-app.post('/', async function(req, res){
-    const posts = await loadPostsCollection();
-    await posts.insertOne({
-        skillName: req.body.text1,
-        skillPie: req.body.text2,
-        createdAt: new Date()
-    });
-    res.status(201).send();
+app.post('/', async (req, res)=>{
+    try{
+        const posts = await loadPostsCollection();
+        await posts.insertOne({
+            skillName: req.body.text1,
+            skillPie: req.body.text2,
+            createdAt: new Date()
+        });
+        res.status(201).send();
+    }
+    catch(e){
+        console.log("Cannot Connect")
+    }
+    
 });
 app.delete('/:id' , async(req, res)=>{
     const posts = await loadPostsCollection();

@@ -120,7 +120,7 @@ export default {
     name:'bars',
     data(){
         return{
-
+            CustomColorBar: 'black'
         }
     }
 }
