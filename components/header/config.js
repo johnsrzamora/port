@@ -2,6 +2,7 @@ import { mapState, mapGetters } from 'vuex'
 export default {
     name:'headers',
     data(){
+
         return{
             activeIndex: '1',
             activeIndex2: '1'
@@ -10,8 +11,9 @@ export default {
 
     computed:{
         ...mapState({
-            users: state=> state.users
+            users: state => state.users
         }),
+        
         ...mapGetters({
             getUserByID: 'getUserByID'
         })

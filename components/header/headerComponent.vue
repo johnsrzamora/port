@@ -16,4 +16,10 @@
 .el-header{
     width: 100%;
 }
+.el-button{
+    color: black;
+}
+.el-button :hover{
+    color: gold;
+}
 </style>

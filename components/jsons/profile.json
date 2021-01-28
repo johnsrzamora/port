@@ -3,13 +3,45 @@
         {
             "id":"1",
             "profile_name": "Front-End",
-            "intro": "im a front-end developer"
-        },
-        {
-            "id":"2",
-            "profile_name": "Video-Editor",
-            "intro": "im a VideoEditor"
+            "intro": "im a front-end developer",
+            "skills": [
+                {   
+                    "id": "1",
+                    "name":"vueJS",
+                    "rate":"60"
+                },
+                {
+                    "id": "2",
+                    "name":"CSS / Element-ui",
+                    "rate":"75"
+                },
+                {
+                    "id": "3",
+                    "name":"ExpressJS",
+                    "rate":"47"
+                },
+                {
+                    "id": "4",
+                    "name":"HTML5",
+                    "rate":"50"
+                },
+                {
+                    "id": "5",
+                    "name":"Apexcharts",
+                    "rate":"75"
+                },
+                {
+                    "id": "6",
+                    "name":"Javascript-native",
+                    "rate":"56"
+                },
+                {
+                    "id": "7",
+                    "name":"NuxtJS",
+                    "rate":"47"
+                }
+            ]
+            
         }
-    
     ]
 }
